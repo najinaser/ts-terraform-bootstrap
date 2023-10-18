@@ -1,0 +1,29 @@
+{
+  "name": "ts-terraform-bootstrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "tsc",
+    "build2": "tsc && cp package.json dist && cd dist && npm i && zip -r ../deployment-package.zip .",
+    "lint:fix": "eslint \"src/**/**.ts\" --fix",
+    "lint": "eslint \"src/**/**.ts\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.6",
+    "@types/node": "^20.8.7",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.51.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.125"
+  }
+}
