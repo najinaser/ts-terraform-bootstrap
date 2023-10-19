@@ -132,3 +132,13 @@ dist
 .DS_Store
 
 terraform/.terraform
+
+
+*.zip
+
+
+terraform/.terraform.lock.hcl
+
+terraform/terraform.tfstate
+
+terraform.tfstate.backup

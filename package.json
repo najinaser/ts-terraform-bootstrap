@@ -8,7 +8,8 @@
     "build": "tsc",
     "build2": "tsc && cp package.json dist && cd dist && npm i && zip -r ../deployment-package.zip .",
     "lint:fix": "eslint \"src/**/**.ts\" --fix",
-    "lint": "eslint \"src/**/**.ts\""
+    "lint": "eslint \"src/**/**.ts\"",
+    "tfplan": "terraform plan -out=tfplan"
   },
   "keywords": [],
   "author": "",
