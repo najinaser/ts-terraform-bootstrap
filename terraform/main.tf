@@ -1,7 +1,6 @@
 provider "aws" {
   region = "eu-west-1"
-  access_key = "xx"
-  secret_key = "xx/yy"
+  profile = "cognito-sandbox"
 }
 
 # https://github.com/antonputra/tutorials/tree/main/lessons/115
@@ -62,4 +61,15 @@ resource "aws_iam_role" "lambda" {
       }
     ]
   })
+}
+
+resource "aws_cloudwatch_log_group" "example_lambda" {
+  name = "/aws/lambda/${aws_lambda_function.example_lambda.function_name}"
+
+  retention_in_days = 14
+}
+
+resource "aws_iam_role_policy_attachment" "hello_lambda_policy" {
+  role       = aws_iam_role.lambda.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
