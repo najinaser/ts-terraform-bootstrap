@@ -1,13 +1,36 @@
 const validUsers: any = {
-     password: "12", 
-     emailAddress: "naji.naser+30@moo.com" 
+    "naji.naser+31@moo.com":{
+        password: "12", 
+        emailAddress: "naji.naser+31@moo.com" 
+    },
+    "philip.cadwallader+30@moo.com": {
+        password: "1234", 
+        emailAddress: "philip.cadwallader+30@moo.com" 
+    },
+    "philip.cadwallader+31@moo.com": {
+        password: "31", 
+        emailAddress: "philip.cadwallader+31@moo.com" 
+    },
+    "philip.cadwallader+32@moo.com": {
+        password: "32", 
+        emailAddress: "philip.cadwallader+32@moo.com" 
+    },
+    "naji@moo.com":{
+        password: "12", 
+        emailAddress: "naji@moo.com" 
+    },
+    "naji@oo.com":{
+        password: "12", 
+        emailAddress: "naji@oo.com" 
+    },
   };
   
   // Replace this mock with a call to a real authentication service.
-  const authenticateUser = (email: string, password: string) => {
+const authenticateUser = (email: string, password: string) => {
+    const validSingleUsers = validUsers[email]
     // we call Site
-    if (validUsers.emailAddress === email && validUsers.password === password) {
-      return validUsers;
+    if (validSingleUsers.emailAddress === email && validSingleUsers.password === password) {
+      return validSingleUsers;
     } else {
       return null;
     }
@@ -36,7 +59,7 @@ const handler = async (event: any) => {
     return event;
   };
   
-  export { handler };
+  export { handler, authenticateUser };
   
 
 
