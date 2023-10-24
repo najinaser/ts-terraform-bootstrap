@@ -9,10 +9,13 @@ export const handler = async (
           claimsToAddOrOverride: {
             my_first_attribute: "first_value",
             my_second_attribute: "second_value",
+            my_third_attribute: "third_value",
           },
           claimsToSuppress: ["email"],
         },
       };
+    
+      console.log("after event")
     
       return event;
     // const queries = event.queryStringParameters;
