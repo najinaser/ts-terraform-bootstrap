@@ -133,6 +133,8 @@ dist
 
 terraform/.terraform
 
+terraform/tfplan
+
 
 *.zip
 
