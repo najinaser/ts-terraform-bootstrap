@@ -73,3 +73,15 @@ resource "aws_iam_role_policy_attachment" "hello_lambda_policy" {
   role       = aws_iam_role.lambda.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }
+
+
+module "product_listing_ads" {
+  source = "./modules/product-listing-ads"
+
+  lambda_functions_bucket_name = aws_s3_bucket.lambda_bucket.id
+  # lambda_functions_bucket_key = aws_s3_bucket.lambda_bucket.id
+  lambda_functions_bucket_key = "deployment-package.zip"
+
+  # s3_bucket = aws_s3_bucket.lambda_bucket.id
+  # s3_key    = aws_s3_object.example_lambda.key
+}

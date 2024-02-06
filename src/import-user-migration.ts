@@ -39,7 +39,7 @@ const authenticateUser = (email: string, password: string) => {
   
 const handler = async (event: any) => {
 
-    console.log("event", { event })
+    console.log("event Feb 2", { event })
 
     if (event.triggerSource == "UserMigration_Authentication") {
         console.log("1111")

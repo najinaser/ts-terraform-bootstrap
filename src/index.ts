@@ -3,7 +3,7 @@
 export const handler = async (
     event: any
 ): Promise<any> => {
-    console.log("event-2", { event })
+    console.log("event-2 - Feb 2", { event })
     event.response = {
         claimsOverrideDetails: {
           claimsToAddOrOverride: {
